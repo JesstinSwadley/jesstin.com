@@ -1,9 +1,9 @@
 import { Briefcase, Rocket, ShieldCheck, Zap } from "lucide-react"
+import SectionContainer from "../ui/SectionContainer"
 
 const CareerEvolution = () => {
 	return (
-		<section 
-			className="max-w-5xl mx-auto px-6 py-24">
+		<SectionContainer>
 				<div 
 					className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
 						<div 
@@ -136,7 +136,7 @@ const CareerEvolution = () => {
 								</ul>
 						</div>
 				</div>
-		</section>
+		</SectionContainer>
 	)
 }
 

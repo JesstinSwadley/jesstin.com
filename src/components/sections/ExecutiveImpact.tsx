@@ -1,4 +1,5 @@
 import { ArrowRight, BarChart3, BookOpenCheck, Cpu, TrendingUp, Users, Zap } from 'lucide-react';
+import SectionContainer from '../ui/SectionContainer';
 
 const ExecutiveImpact = () => {
 	const results = [
@@ -53,59 +54,59 @@ const ExecutiveImpact = () => {
 	]
 
 	return (
-		<section 
-			className="max-w-5xl mx-auto px-6 py-20 bg-white">
-				<div 
-					className="text-center mb-16">
-						<h2 
-							className="text-3xl md:text-4xl font-black tracking-tight mb-4">
-								Executive Impact & Results
-						</h2>
+		<SectionContainer
+				wrapperClassName='bg-white'>
+					<div 
+						className="text-center mb-16">
+							<h2 
+								className="text-3xl md:text-4xl font-black tracking-tight mb-4">
+									Executive Impact & Results
+							</h2>
 
-						<p 
-							className="text-slate-500 text-lg max-w-2xl mx-auto">
-								A track record of optimizing infrastructure to drive efficiency, retention, and scalable growth.
-						</p>
-				</div>
+							<p 
+								className="text-slate-500 text-lg max-w-2xl mx-auto">
+									A track record of optimizing infrastructure to drive efficiency, retention, and scalable growth.
+							</p>
+					</div>
 
-				<div 
-					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{results.map((item, index) => (
-							<div 
-								key={index}
-								className="group p-8 border border-slate-200 rounded-2xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50/50 transition-all duration-300 cursor-pointer bg-white">
-									<div 
-										className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-											{item.icon}
-									</div>
+					<div 
+						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+							{results.map((item, index) => (
+								<div 
+									key={index}
+									className="group p-8 border border-slate-200 rounded-2xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50/50 transition-all duration-300 cursor-pointer bg-white">
+										<div 
+											className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+												{item.icon}
+										</div>
 
-									<div 
-										className="flex items-baseline gap-2 mb-1">
-											<span 
-												className="text-4xl font-black tracking-tight">
-													{item.metric}
-											</span>
-									</div>
-									<p 
-										className="text-slate-900 font-bold mb-4">
-											{item.label}
-									</p>
-									<p 
-										className="text-slate-500 text-sm leading-relaxed">
-											{item.description}
-									</p>
-								
-									{/* Future "Expansion" hint for Phase 3 */}
-									<div 
-										className="mt-6 flex items-center gap-2 text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-											VIEW STORY 
-											<ArrowRight 
-												size={14} />
-									</div>
-							</div>
-						))}
-				</div>
-		</section>
+										<div 
+											className="flex items-baseline gap-2 mb-1">
+												<span 
+													className="text-4xl font-black tracking-tight">
+														{item.metric}
+												</span>
+										</div>
+										<p 
+											className="text-slate-900 font-bold mb-4">
+												{item.label}
+										</p>
+										<p 
+											className="text-slate-500 text-sm leading-relaxed">
+												{item.description}
+										</p>
+									
+										{/* Future "Expansion" hint for Phase 3 */}
+										<div 
+											className="mt-6 flex items-center gap-2 text-blue-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+												VIEW STORY 
+												<ArrowRight 
+													size={14} />
+										</div>
+								</div>
+							))}
+					</div>
+		</SectionContainer>
 	)
 }
 

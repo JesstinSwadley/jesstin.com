@@ -1,12 +1,14 @@
 import { ArrowUpRight, Code2, Mail, MapPin, User } from "lucide-react";
+import SectionContainer from "../ui/SectionContainer";
 
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-				<footer 
-					className="bg-slate-900 text-white py-20">
+				<SectionContainer
+					as="footer"
+					wrapperClassName="bg-slate-900 text-white">
 						<div 
 							className="max-w-5xl mx-auto px-6">
 								<div 
@@ -101,7 +103,7 @@ const Footer = () => {
 										</p>
 								</div>
 						</div>
-				</footer>
+				</SectionContainer>
 	)
 }
 

@@ -1,4 +1,5 @@
 import { Workflow } from "lucide-react";
+import SectionContainer from "../ui/SectionContainer";
 
 
 const OperationsPortfolio = () => {
@@ -19,8 +20,8 @@ const OperationsPortfolio = () => {
 	];
 
 	return (
-		<section
-			className="max-w-5xl mx-auto px-6 py-20 bg-slate-50 rounded-3xl">
+		<SectionContainer
+			className="bg-slate-50 rounded-3xl">
 				<div
 					className="mb-12">
 					<h2
@@ -84,7 +85,7 @@ const OperationsPortfolio = () => {
 							</div>
 						))}
 				</div>
-		</section>
+		</SectionContainer>
 	)
 }
 

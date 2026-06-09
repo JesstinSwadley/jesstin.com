@@ -1,4 +1,5 @@
 import { Code2, ExternalLink, GitFork } from "lucide-react";
+import SectionContainer from "../ui/SectionContainer";
 
 const DeveloperPortfolio = () => {
 	const projects = [
@@ -16,8 +17,7 @@ const DeveloperPortfolio = () => {
 	]
 
 	return (
-		<section
-			className="max-w-5xl mx-auto px-6 py-20">
+		<SectionContainer>
 				<div
 					className="mb-12">
 						<h2
@@ -46,7 +46,7 @@ const DeveloperPortfolio = () => {
 										</div>
 
 									<a 
-										href={project.link} 
+										href={project.link}
 										className="text-slate-400 hover:text-slate-900 transition-colors">
 											<GitFork 
 												size={20} />
@@ -86,7 +86,7 @@ const DeveloperPortfolio = () => {
 							</div>
 						))}
 				</div>
-		</section>
+		</SectionContainer>
 	)
 }
 

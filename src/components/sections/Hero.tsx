@@ -1,9 +1,10 @@
 import { ArrowRight, Code2, Handshake, MapPin, Zap } from "lucide-react"
+import SectionContainer from "../ui/SectionContainer";
 
 const Hero = () => {
 	return (
-		<section
-			className="max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+		<SectionContainer
+			className="md:py-32 flex flex-col items-center text-center">
 
 			<h1
 				className="text-6xl md:text-8xl font-black tracking-tighter mb-6">
@@ -70,7 +71,7 @@ const Hero = () => {
 							Leveraging Gemini to optimize Project Margins, Forecasting, and Utilization.
 					</div>
 			</div>
-		</section>
+		</SectionContainer>
 	)
 }
 
