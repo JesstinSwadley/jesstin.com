@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3, BookOpenCheck, Cpu, TrendingUp, Users, Zap } from 'lucide-react';
 import SectionContainer from '../ui/SectionContainer';
+import SectionHeader from '../ui/SectionHeader';
 
 const ExecutiveImpact = () => {
 	const results = [
@@ -55,19 +56,11 @@ const ExecutiveImpact = () => {
 
 	return (
 		<SectionContainer
-				wrapperClassName='bg-white'>
-					<div 
-						className="text-center mb-16">
-							<h2 
-								className="text-3xl md:text-4xl font-black tracking-tight mb-4">
-									Executive Impact & Results
-							</h2>
-
-							<p 
-								className="text-slate-500 text-lg max-w-2xl mx-auto">
-									A track record of optimizing infrastructure to drive efficiency, retention, and scalable growth.
-							</p>
-					</div>
+				wrapperClassName="bg-white">
+					<SectionHeader
+						title="Executive Impact & Results"
+						description="A track record of optimizing infrastructure to drive efficiency, retention, and scalable growth."
+						align="center"/>
 
 					<div 
 						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

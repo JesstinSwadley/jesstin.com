@@ -1,5 +1,6 @@
 import { Code2, ExternalLink, GitFork } from "lucide-react";
 import SectionContainer from "../ui/SectionContainer";
+import SectionHeader from "../ui/SectionHeader";
 
 const DeveloperPortfolio = () => {
 	const projects = [
@@ -18,18 +19,10 @@ const DeveloperPortfolio = () => {
 
 	return (
 		<SectionContainer>
-				<div
-					className="mb-12">
-						<h2
-							className="text-3xl font-black mb-4">
-								Developer Portfolio
-						</h2>
-
-						<p
-							className="text-slate-500 max-w-xl">
-								Engineering scalable tools to bridge the gap between technical execution and operational efficiency.
-						</p>
-				</div>
+			<SectionHeader
+				title="Developer Portfolio"
+				description="Engineering scalable tools to bridge the gap between technical execution and operational efficiency."
+				align="left"/>
 
 				<div 
 					className="grid grid-cols-1 md:grid-cols-2 gap-8">

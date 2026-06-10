@@ -1,5 +1,6 @@
 import { Workflow } from "lucide-react";
 import SectionContainer from "../ui/SectionContainer";
+import SectionHeader from "../ui/SectionHeader";
 
 
 const OperationsPortfolio = () => {
@@ -22,17 +23,9 @@ const OperationsPortfolio = () => {
 	return (
 		<SectionContainer
 			className="bg-slate-50 rounded-3xl">
-				<div
-					className="mb-12">
-					<h2
-						className="text-3xl font-black mb-4">
-							Operations Portfolio
-					</h2>
-					<p
-						className="text-slate-500 max-w-xl">
-							Building the technical infrastructure and governance models that allow professional services teams to scale
-					</p>
-				</div>
+				<SectionHeader 
+					title="Operations Portfolio"
+					description="Building the technical infrastructure and governance models that allow professional services teams to scale."/>
 
 				<div 
 					className="grid grid-cols-1 gap-8">
