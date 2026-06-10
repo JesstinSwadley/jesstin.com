@@ -1,6 +1,7 @@
 import { Workflow } from "lucide-react";
 import SectionContainer from "../ui/SectionContainer";
 import SectionHeader from "../ui/SectionHeader";
+import Badge from "../ui/Badge";
 
 
 const OperationsPortfolio = () => {
@@ -67,11 +68,11 @@ const OperationsPortfolio = () => {
 									<div 
 										className="flex flex-wrap gap-2 items-center">
 											{project.tools.map(tool => (
-												<span 
-													key={tool} 
-													className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-md uppercase tracking-wider">
-														{tool} 
-												</span>
+												<Badge
+													key={tool}
+													variant="blue">
+														{tool}
+												</Badge>
 											))}
 									</div>
 								</div>

@@ -1,6 +1,7 @@
 import { Code2, ExternalLink, GitFork } from "lucide-react";
 import SectionContainer from "../ui/SectionContainer";
 import SectionHeader from "../ui/SectionHeader";
+import Badge from "../ui/Badge";
 
 const DeveloperPortfolio = () => {
 	const projects = [
@@ -60,11 +61,11 @@ const DeveloperPortfolio = () => {
 								<div 
 									className="flex flex-wrap gap-2 mb-8">
 										{project.tags.map((tag) => (
-											<span 
-												key={tag} 
-												className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md uppercase tracking-wider">
+											<Badge
+												key={tag}
+												variant="slate">
 													{tag}
-											</span>
+											</Badge>
 										))}
 								</div>
 
