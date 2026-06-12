@@ -1,7 +1,5 @@
-import { Code2, ExternalLink, GitFork } from "lucide-react";
 import SectionContainer from "../ui/SectionContainer";
 import SectionHeader from "../ui/SectionHeader";
-import Badge from "../ui/Badge";
 import ProjectCard from "../cards/ProjectCard";
 
 const DeveloperPortfolio = () => {
