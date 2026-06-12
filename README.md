@@ -32,6 +32,18 @@ Ensure you have Node.js (v20.x or higher) and npm installed locally.
    git clone [https://github.com/JesstinSwadley/your-portfolio-repo.git](https://github.com/JesstinSwadley/your-portfolio-repo.git)
    cd your-portfolio-repo
 
+2. **Install node dependencies:**
+   ```bash
+   npm install
+
+3. **Launch local development server:**
+   ```bash
+   npm run dev
+
+4. **Compile production build bundle:**
+   ```bash
+   npm run build
+
 ---
 
 ## Roadmap
@@ -42,10 +54,10 @@ Ensure you have Node.js (v20.x or higher) and npm installed locally.
   - [x] Implement edge-tier global delivery caching (Lightsail CDN Distribution).
   - [x] Enforce automated path fallback rules in global Nginx configurations to support SPA hard-refreshes.
 
-- [/] **Phase 2: Componentization & Structural Refactoring** *(In Progress)*
-  - [ ] Extract massive landing layout into highly atomic, logically segregated view components.
-  - [ ] Isolate reusable structural cards (Results, Dev Projects, Ops Frameworks).
-  - [ ] Clean up interface declarations to abstract static metric telemetry out of component code blocks.
+- [x] **Phase 2: Componentization & Structural Refactoring** *(In Progress)*
+  - [x] Extract massive landing layout into highly atomic, logically segregated view components.
+  - [x] Isolate reusable structural cards (Results, Dev Projects, Ops Frameworks).
+  - [x] Clean up interface declarations to abstract static metric telemetry out of component code blocks.
 
 - [ ] **Phase 3: Extended UX/UI & Responsive Adaptations**
   - [ ] Integrate a native system-preference detecting Light & Dark mode theme switch engine.
