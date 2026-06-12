@@ -1,68 +1,40 @@
 import { Briefcase, Rocket, ShieldCheck, Zap } from "lucide-react"
 import SectionContainer from "../ui/SectionContainer"
+import ValuePillar from "../cards/ValuePillar"
 
 const CareerEvolution = () => {
+	const pillars = [
+		{
+			title: "Technical Depth",
+			description: "I build the tools I manage. From Go backends to React frontends, I understand the full stack of modern operations.",
+			icon: <Zap 
+					size={24} />
+		},
+		{
+			title: "Operational Rigor",
+			description: "I specialize in governance and SOPs, turning manual, high-error processes into automated, scalable workflows.",
+			icon: <ShieldCheck
+					size={24} />
+		},
+		{
+			title: "Stratiegic Scaling",
+			description: "I bridge the gap between business objectives and technical execution, partnering with Sales, Finance, and IT.",
+			icon: <Rocket 
+					size={24} />
+		}
+	]
+
 	return (
 		<SectionContainer>
 				<div 
 					className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-						<div 
-							className="text-center">
-								<div 
-									className="mx-auto w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
-										<Zap 
-											size={24} />
-								</div>
-
-								<h3 
-									className="font-bold text-lg mb-2">
-										Technical Depth
-								</h3>
-
-								<p 
-									className="text-sm text-slate-500">
-										I build the tools I manage. From Go backends to React frontends, I understand the full stack of modern operations.
-								</p>
-						</div>
-
-						<div 
-							className="text-center">
-								<div 
-									className="mx-auto w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
-										<ShieldCheck 
-											size={24} />
-								</div>
-
-								<h3 
-									className="font-bold text-lg mb-2">
-										Operational Rigor
-								</h3>
-
-								<p 
-									className="text-sm text-slate-500">
-										I specialize in governance and SOPs, turning manual, high-error processes into automated, scalable workflows.
-								</p>
-						</div>
-
-
-						<div 
-							className="text-center">
-								<div 
-									className="mx-auto w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
-										<Rocket 
-											size={24} />
-								</div>
-
-								<h3 
-									className="font-bold text-lg mb-2">
-										Strategic Scaling
-								</h3>
-
-								<p 
-									className="text-sm text-slate-500">
-										I bridge the gap between business objectives and technical execution, partnering with Sales, Finance, and IT.
-								</p>
-						</div>
+						{pillars.map((pillar, index) => (
+							<ValuePillar
+								key={index}
+								title={pillar.title}
+								description={pillar.description}
+								icon={pillar.icon} />
+						))}
 				</div>
 
 				<div 
