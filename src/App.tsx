@@ -4,12 +4,15 @@ import DeveloperPortfolio from './components/sections/DeveloperPortfolio';
 import OperationsPortfolio from './components/sections/OperationsPortfolio';
 import CareerEvolution from './components/sections/CareerEvolution';
 import Footer from './components/sections/Footer';
+import ThemeToggle from './components/ui/ThemeToggle';
 
 function App() {
 	
 	return (
 		<div
 			className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100">
+
+				<ThemeToggle />
 
 				<Hero />
 
