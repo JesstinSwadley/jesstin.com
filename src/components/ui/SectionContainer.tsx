@@ -20,7 +20,7 @@ const SectionContainer = ({
 			id={id}
 			className={`w-full transition-colors duration-300 ${wrapperClassName}`}>
 				<div
-					className={`max-w-5xl mx-auto px-6 py-20 ${className}`}>
+					className={`max-w-5xl mx-auto px-6 py-20 transition-colors duration-300 ${className}`}>
 						{children}
 				</div>
 		</Component>
