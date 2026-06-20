@@ -16,7 +16,7 @@ const ExecutiveImpact = () => {
 		{
 			metric: "100+",
 			label: "SOPs Developed",
-			description: "Authored 100+ SOPs and Delivery Policies to standardize methodologies, driving a 10% reduction in manual workload[cite: 5, 15].",
+			description: "Authored 100+ SOPs and Delivery Policies to standardize methodologies, driving a 10% reduction in manual workload.",
 			icon: <BookOpenCheck 
 					className="text-blue-600"
 					size={24} />,
@@ -24,7 +24,7 @@ const ExecutiveImpact = () => {
 		{
 			metric: "12%",
 			label: "Retention Boost",
-			description: "Optimized user interfaces via data visualization, resulting in a 12% increase in customer retention[cite: 24].",
+			description: "Optimized user interfaces via data visualization, resulting in a 12% increase in customer retention.",
 			icon: <Users 
 				className="text-blue-600" 
 				size={24} />,
@@ -32,7 +32,7 @@ const ExecutiveImpact = () => {
 		{
 			metric: "20%",
 			label: "Usage Increase",
-			description: "Engineered a data aggregation platform for strategic decision-making, leading to a 20% boost in product usage[cite: 23, 24].",
+			description: "Engineered a data aggregation platform for strategic decision-making, leading to a 20% boost in product usage.",
 			icon: <TrendingUp 
 					className="text-blue-600" 
 					size={24} />,
@@ -40,7 +40,7 @@ const ExecutiveImpact = () => {
 		{
 			metric: "10%",
 			label: "Manual Workload ↓",
-			description: "Developed custom data entry automation scripts to reduce manual workload for internal teams[cite: 24].",
+			description: "Developed custom data entry automation scripts to reduce manual workload for internal teams.",
 			icon: <Cpu
 					className="text-blue-600" 
 					size={24} />,
@@ -48,7 +48,7 @@ const ExecutiveImpact = () => {
 		{
 			metric: "Scalable",
 			label: "Systems Architecture",
-			description: "Partnered with Sales Ops and Finance to translate operational needs into scalable systems[cite: 16].",
+			description: "Partnered with Sales Ops and Finance to translate operational needs into scalable systems.",
 			icon: <BarChart3 
 					className="text-blue-600" 
 					size={24} />,
