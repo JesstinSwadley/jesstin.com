@@ -23,7 +23,7 @@ const OperationsPortfolio = () => {
 
 	return (
 		<SectionContainer
-			className="bg-slate-50 rounded-3xl">
+			className="bg-slate-100 dark:bg-slate-900/40 rounded-3xl">
 				<SectionHeader 
 					title="Operations Portfolio"
 					description="Building the technical infrastructure and governance models that allow professional services teams to scale."/>

@@ -10,7 +10,6 @@ const ExecutiveImpact = () => {
 			label: "TTV Reduction",
 			description: "Optimized Services Time-to-Value by 30%-50% and reduced delivery cycles from 30+ days to 14 days",
 			icon: <Zap 
-					className="text-blue-600"
 					size={24} />
 		},
 		{
@@ -18,7 +17,6 @@ const ExecutiveImpact = () => {
 			label: "SOPs Developed",
 			description: "Authored 100+ SOPs and Delivery Policies to standardize methodologies, driving a 10% reduction in manual workload.",
 			icon: <BookOpenCheck 
-					className="text-blue-600"
 					size={24} />,
 		},
 		{
@@ -26,7 +24,6 @@ const ExecutiveImpact = () => {
 			label: "Retention Boost",
 			description: "Optimized user interfaces via data visualization, resulting in a 12% increase in customer retention.",
 			icon: <Users 
-				className="text-blue-600" 
 				size={24} />,
 		},
 		{
@@ -34,7 +31,6 @@ const ExecutiveImpact = () => {
 			label: "Usage Increase",
 			description: "Engineered a data aggregation platform for strategic decision-making, leading to a 20% boost in product usage.",
 			icon: <TrendingUp 
-					className="text-blue-600" 
 					size={24} />,
 		},
 		{
@@ -42,7 +38,6 @@ const ExecutiveImpact = () => {
 			label: "Manual Workload ↓",
 			description: "Developed custom data entry automation scripts to reduce manual workload for internal teams.",
 			icon: <Cpu
-					className="text-blue-600" 
 					size={24} />,
 		},
 		{
@@ -50,14 +45,13 @@ const ExecutiveImpact = () => {
 			label: "Systems Architecture",
 			description: "Partnered with Sales Ops and Finance to translate operational needs into scalable systems.",
 			icon: <BarChart3 
-					className="text-blue-600" 
 					size={24} />,
 		}
 	]
 
 	return (
 		<SectionContainer
-				wrapperClassName="bg-white">
+				wrapperClassName="bg-slate-100 dark:bg-slate-900">
 					<SectionHeader
 						title="Executive Impact & Results"
 						description="A track record of optimizing infrastructure to drive efficiency, retention, and scalable growth."

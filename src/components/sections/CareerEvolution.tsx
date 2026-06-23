@@ -64,11 +64,11 @@ const CareerEvolution = () => {
 				<div 
 					className="relative border-l-2 border-slate-100 ml-4 md:ml-8 pl-8 space-y-16">
 						<h2 
-							className="text-3xl font-black mb-12 -ml-8 flex items-center gap-3">
+							className="text-3xl font-black mb-10 -ml-6 flex items-center gap-3 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 								<Briefcase 
-									className="text-blue-600" /> 
+									className="text-blue-600 dark:text-blue-400 transition-colors duration-300" /> 
 									
-								Career Evolution
+								Career
 						</h2>
 
 						{experiences.map((exp, index) => (
