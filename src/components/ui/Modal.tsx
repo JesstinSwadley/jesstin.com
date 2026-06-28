@@ -34,7 +34,11 @@ const Modal = ({
 			document.body.style.overflow = originalStyle;
 			window.removeEventListener('keydown', handleKeyDown);
 		}
-	}, [isOpen, onClose])
+	}, [isOpen, onClose]);
+
+	if (!isOpen) {
+		return null;
+	}
 
 	return (
 		<div
