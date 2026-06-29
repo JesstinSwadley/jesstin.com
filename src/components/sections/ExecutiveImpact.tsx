@@ -2,8 +2,12 @@ import { BarChart3, BookOpenCheck, Cpu, TrendingUp, Users, Zap } from 'lucide-re
 import SectionContainer from '../ui/SectionContainer';
 import SectionHeader from '../ui/SectionHeader';
 import ImpactCard from '../cards/ImpactCard';
+import { useState } from 'react';
+import Modal from '../ui/Modal';
 
 const ExecutiveImpact = () => {
+	const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
 	const results = [
 		{
 			metric: "50%",
@@ -49,6 +53,8 @@ const ExecutiveImpact = () => {
 		}
 	]
 
+	const activeResult = activeIndex !== null ? results[activeIndex] : null;
+
 	return (
 		<SectionContainer
 				wrapperClassName="bg-slate-100 dark:bg-slate-900">
@@ -57,14 +63,42 @@ const ExecutiveImpact = () => {
 						description="A track record of optimizing infrastructure to drive efficiency, retention, and scalable growth."
 						align="center"/>
 
+
 					<div
 						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 							{results.map((item, index) => (
-								<ImpactCard
+								<div
 									key={index}
-									result={item} />
+									onClick={() => setActiveIndex(index)}>
+										<ImpactCard
+											result={item} />
+								</div>
 							))}
 					</div>
+
+					<Modal
+						isOpen={activeIndex !== null}
+						onClose={() => setActiveIndex(null)}
+						title={activeResult ? `${activeResult.label} Case Study` : ''}>
+							<div
+								className='space-y-4 py-2'>
+									<p
+										className='font-bold text-blue-600 dark:text-blue-400 text-lg'>
+											Metric Highlighted: {activeResult?.metric} Impact Summary
+									</p>
+
+									<p>
+										This is your temporary validation placeholder story block. Clicking outside this box or pressing the 
+										<kbd className="px-2 py-1 mx-1 text-xs font-mono bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded shadow-xs">Esc</kbd> 
+										key will safely clear the active index state and close the frame.
+									</p>
+
+									<p
+										className='text-slate-400 dark:text-slate-500 text-sm italic'>
+											Mechanical Test Note: State isolation, dark-mode styling variables, and underlying body scroll locking are now fully active.
+									</p>
+							</div>
+					</Modal>
 		</SectionContainer>
 	)
 }
