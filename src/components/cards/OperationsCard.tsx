@@ -1,5 +1,6 @@
 import type React from "react";
 import Badge from "../ui/Badge";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface OperationsItem {
 	title: string;
@@ -11,10 +12,16 @@ interface OperationsItem {
 
 interface OperationsCardProps {
 	project: OperationsItem;
+	isExpanded: boolean;
+	onToggle: () => void;
+	children?: React.ReactNode;
 }
 
 const OperationsCard = ({
-	project
+	project,
+	isExpanded,
+	onToggle,
+	children
 }: OperationsCardProps) => {
 	return (
 		<div 
@@ -61,6 +68,32 @@ const OperationsCard = ({
 							</Badge>
 						))}
 				</div>
+
+				<div
+					className="pt-2">
+						<button
+							onClick={onToggle}
+							type="button"
+							className='flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 cursor-pointer transition-colors'>
+								{isExpanded ? (
+									<>
+										Hide Framework Details 
+										
+										<ChevronUp
+											size={14} />
+									</>
+								) : (
+									<>
+										View Framework Details
+
+										<ChevronDown
+											size={14} />
+									</>
+								)}
+						</button>
+				</div>
+
+				{children}
 			</div>
 		</div>
 	)
