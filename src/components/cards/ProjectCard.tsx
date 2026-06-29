@@ -1,4 +1,5 @@
-import { Code2, ExternalLink, GitFork } from "lucide-react";
+import  React from 'react';
+import { ChevronDown, ChevronUp, Code2, ExternalLink, GitFork } from "lucide-react";
 import Badge from "../ui/Badge";
 
 interface ProjectItem {
@@ -9,11 +10,17 @@ interface ProjectItem {
 }
 
 interface ProjectCardProps {
-	project: ProjectItem
+	project: ProjectItem;
+	isExpanded: boolean;
+	onToggle: () => void;
+	children?: React.ReactNode
 }
 
 const ProjectCard = ({
-	project
+	project,
+	isExpanded,
+	onToggle,
+	children
 }: ProjectCardProps) => {
 	return (
 		<div
@@ -55,10 +62,47 @@ const ProjectCard = ({
 						))}
 				</div>
 
-				<div
+				{/* <div
 					className="flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 transition-colors duration-300">
 						<ExternalLink
 							size={14} />
+				</div> */}
+
+				<div>
+					<div
+						className='flex items-center justify-between pt-2'>
+							<button
+								onClick={onToggle}
+								type='button'
+								className='flex items-center gap-1 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 cursor-pointer transition-colors'>
+									{isExpanded ? (
+										<>
+											Hide Tech Specs 
+
+											<ChevronUp
+												size={14} />
+										</>
+									) : (
+										<>
+											View Tech Specs
+
+											<ChevronDown
+												size={14} />
+										</>
+									)}
+							</button>
+
+							<a 
+								href={project.link}
+								target='_blank'
+								rel='noreferrer'
+								className='flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors'>
+									<ExternalLink
+										size={14} />
+							</a>
+					</div>
+
+					{children}
 				</div>
 		</div>
 	)
