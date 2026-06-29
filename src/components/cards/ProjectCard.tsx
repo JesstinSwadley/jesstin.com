@@ -62,12 +62,6 @@ const ProjectCard = ({
 						))}
 				</div>
 
-				{/* <div
-					className="flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 transition-colors duration-300">
-						<ExternalLink
-							size={14} />
-				</div> */}
-
 				<div>
 					<div
 						className='flex items-center justify-between pt-2'>
