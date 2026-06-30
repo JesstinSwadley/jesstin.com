@@ -1,59 +1,14 @@
-import { BarChart3, BookOpenCheck, Cpu, TrendingUp, Users, Zap } from 'lucide-react';
 import SectionContainer from '../ui/SectionContainer';
 import SectionHeader from '../ui/SectionHeader';
 import ImpactCard from '../cards/ImpactCard';
 import { useState } from 'react';
 import Modal from '../ui/Modal';
+import { impactResults } from '../../data/executiveImpactData';
 
 const ExecutiveImpact = () => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-	const results = [
-		{
-			metric: "50%",
-			label: "TTV Reduction",
-			description: "Optimized Services Time-to-Value by 30%-50% and reduced delivery cycles from 30+ days to 14 days",
-			icon: <Zap 
-					size={24} />
-		},
-		{
-			metric: "100+",
-			label: "SOPs Developed",
-			description: "Authored 100+ SOPs and Delivery Policies to standardize methodologies, driving a 10% reduction in manual workload.",
-			icon: <BookOpenCheck 
-					size={24} />,
-		},
-		{
-			metric: "12%",
-			label: "Retention Boost",
-			description: "Optimized user interfaces via data visualization, resulting in a 12% increase in customer retention.",
-			icon: <Users 
-				size={24} />,
-		},
-		{
-			metric: "20%",
-			label: "Usage Increase",
-			description: "Engineered a data aggregation platform for strategic decision-making, leading to a 20% boost in product usage.",
-			icon: <TrendingUp 
-					size={24} />,
-		},
-		{
-			metric: "10%",
-			label: "Manual Workload ↓",
-			description: "Developed custom data entry automation scripts to reduce manual workload for internal teams.",
-			icon: <Cpu
-					size={24} />,
-		},
-		{
-			metric: "Scalable",
-			label: "Systems Architecture",
-			description: "Partnered with Sales Ops and Finance to translate operational needs into scalable systems.",
-			icon: <BarChart3 
-					size={24} />,
-		}
-	]
-
-	const activeResult = activeIndex !== null ? results[activeIndex] : null;
+	const activeResult = activeIndex !== null ? impactResults[activeIndex] : null;
 
 	return (
 		<SectionContainer
@@ -66,7 +21,7 @@ const ExecutiveImpact = () => {
 
 					<div
 						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-							{results.map((item, index) => (
+							{impactResults.map((item, index) => (
 								<div
 									key={index}
 									onClick={() => setActiveIndex(index)}>
@@ -79,8 +34,8 @@ const ExecutiveImpact = () => {
 					<Modal
 						isOpen={activeIndex !== null}
 						onClose={() => setActiveIndex(null)}
-						title={activeResult ? `${activeResult.label} Case Study` : ''}>
-							<div
+						title={activeResult ? `${activeResult.label} Deep Dive` : ''}>
+							{/* <div
 								className='space-y-4 py-2'>
 									<p
 										className='font-bold text-blue-600 dark:text-blue-400 text-lg'>
@@ -97,7 +52,49 @@ const ExecutiveImpact = () => {
 										className='text-slate-400 dark:text-slate-500 text-sm italic'>
 											Mechanical Test Note: State isolation, dark-mode styling variables, and underlying body scroll locking are now fully active.
 									</p>
-							</div>
+							</div> */}
+
+							{activeResult && (
+								<div
+									className='space-y-6 py-2'>
+										<div>
+											<h4
+												className='text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2'>
+													The Situation
+											</h4>
+
+											<p
+												className='text-slate-700 dark:text-slate-300 text-base'>
+													{activeResult.story.situation}
+											</p>
+										</div>
+
+										<div>
+											<h4
+												className='text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2'>
+													Actions
+											</h4>
+
+											<p
+												className='text-slate-700 dark:text-slate-300 text-base'>
+													{activeResult.story.action}
+											</p>
+										</div>
+
+										<div
+											className='p-5 bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-900/40 rounded-xl transition-colors duration-300'>
+												<h4
+													className='text-xs font-black uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2'>
+														Results
+												</h4>
+
+												<p
+													className='text-slate-900 dark:text-slate-100 font-medium text-base'>
+														{activeResult.story.result}
+												</p>
+										</div>
+								</div>
+							)}
 					</Modal>
 		</SectionContainer>
 	)
