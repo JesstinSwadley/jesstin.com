@@ -70,7 +70,7 @@ const OperationsCard = ({
 				</div>
 
 				<div
-					className="pt-2">
+					className="pt-2 col-span-full">
 						<button
 							onClick={onToggle}
 							type="button"
@@ -91,9 +91,9 @@ const OperationsCard = ({
 									</>
 								)}
 						</button>
-				</div>
 
-				{children}
+						{children}
+				</div>
 			</div>
 		</div>
 	)
