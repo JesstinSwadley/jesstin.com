@@ -77,14 +77,14 @@ const OperationsCard = ({
 							className='flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 cursor-pointer transition-colors'>
 								{isExpanded ? (
 									<>
-										Hide Framework Details 
+										Hide Operation Details 
 										
 										<ChevronUp
 											size={14} />
 									</>
 								) : (
 									<>
-										View Framework Details
+										View Operation Details
 
 										<ChevronDown
 											size={14} />

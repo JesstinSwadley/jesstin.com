@@ -1,29 +1,13 @@
-import { Workflow } from "lucide-react";
 import SectionContainer from "../ui/SectionContainer";
 import SectionHeader from "../ui/SectionHeader";
 import OperationsCard from "../cards/OperationsCard";
 import { useState } from "react";
 import InlineCollapsible from "../ui/InlineCollapsible";
+import { operationsProject } from "../../data/operationsData";
 
 
 const OperationsPortfolio = () => {
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-	const opsProjects = [
-		{
-			title: "Services Infrastructure Modernization",
-			description: "Architected a 19-step automated framework to standardize Post-Sales delivery and monitor Capacity in real-time.",
-			impact: "Reduced TTV by 50% and delivery cycles from 30+ to 14 days.",
-			tools: [
-				"Salesforce", 
-				"ClickUp", 
-				"GoHighLevel", 
-				"SOPs"
-			],
-			icon: <Workflow 
-					size={24} />
-		}
-	];
 
 	const toggleOpsProject = (index: number) => {
 		setExpandedIndex(expandedIndex === index ? null : index);
@@ -38,7 +22,7 @@ const OperationsPortfolio = () => {
 
 				<div 
 					className="grid grid-cols-1 gap-8">
-						{opsProjects.map((project, index) => {
+						{operationsProject.map((project, index) => {
 							const isExpanded = expandedIndex === index;
 
 							return (
@@ -53,13 +37,27 @@ const OperationsPortfolio = () => {
 													className="space-y-3 font-sans">
 														<p 
 															className="font-bold text-slate-900 dark:text-slate-100">
-																📋 19-Step Execution & Automation Mapping
+																{project.detailsTitle}
 														</p>
 														<ul 
-															className="space-y-1 text-xs md:text-sm list-disc pl-4 text-slate-500 dark:text-slate-400">
-																<li>Governance Strategy: Automated handoff pipelines triggered cleanly from CRM wins.</li>
-																<li>Capacity Tracking: Real-time bandwidth tracking models using customized dashboard arrays.</li>
-																<li>Validation Alert: Height-recalculations and CSS grid track metrics operating smoothly.</li>
+															className="space-y-2 text-xs md:text-sm list-none pl-2 text-slate-600 dark:text-slate-400">
+																{project.details.map((detail, dtlIndx) => {
+																	const [label, ...rest] = detail.split(':');
+																	const description = rest.join(':');
+
+																	return (
+																		<li
+																			key={dtlIndx}
+																			className='leading-relaxed'>
+																				<strong
+																					className="text-slate-900 dark:text-slate-100">
+																						{label}:
+																				</strong>
+
+																				{description}
+																		</li>
+																	);
+																})}
 														</ul>
 												</div>
 										</InlineCollapsible>
