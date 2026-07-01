@@ -3,23 +3,10 @@ import SectionHeader from "../ui/SectionHeader";
 import ProjectCard from "../cards/ProjectCard";
 import { useState } from "react";
 import InlineCollapsible from "../ui/InlineCollapsible";
+import { developerProjects } from "../../data/developerData";
 
 const DeveloperPortfolio = () => {
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-	const projects = [
-		{
-			title: "Job Trakcer",
-			description: "A production-ready stateless REST API to centralize job tracking with a focus on speed, security, and data integrity.",
-			tags: [
-				"Go", 
-				"React 19", 
-				"Docker", 
-				"AWS"
-			],
-			link: "https://github.com/JesstinSwadley/job-tracker"
-		}
-	]
 
 	const toggleProject = (index: number) => {
 		setExpandedIndex(expandedIndex === index ? null : index);
@@ -35,7 +22,7 @@ const DeveloperPortfolio = () => {
 
 			<div
 				className="grid grid-cols-1 md:grid-cols-2 gap-8">
-					{projects.map((project, index) => {
+					{developerProjects.map((project, index) => {
 						const isExpanded = expandedIndex === index;
 
 						return (
@@ -50,14 +37,28 @@ const DeveloperPortfolio = () => {
 												className='space-y-3 font-sans'>
 													<p
 														className='font-bold text-slate-900 dark:text-slate-100'>
-														Architecture & API Endpoint Logs
+															{project.specsTitle}
 													</p>
 
 													<ul
-														className='space-y-1.5 text-xs md:text-sm list-disc pl-4 text-slate-500 dark:text-slate-400'>
-															<li>Backend Matrix: Stateless microservices written completely in pure Go.</li>
-															<li>Delivery Framework: Bundled using clean multi-stage Docker environment parameters.</li>
-															<li>Database Wire-up: Mock placeholder configurations validating active component height.</li>
+														className='space-y-2 text-xs md:text-sm list-none pl-2 text-slate-500 dark:text-slate-400'>
+															{project.specs.map((spec, specIndx) => {
+																const [label, ...rest] = spec.split(':');
+																const description = rest.join(':');
+
+																return (
+																	<li
+																		key={specIndx}
+																		className='leading-relaxed'>
+																			<strong
+																				className="text-slate-900 dark:text-slate-200">
+																					{label}:
+																			</strong>
+
+																			{description}
+																	</li>
+																);
+															})}
 													</ul>
 											</div>
 									</InlineCollapsible>
